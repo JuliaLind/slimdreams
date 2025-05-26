@@ -1,0 +1,34 @@
+# SlimDreams
+
+![High-level diagram of the system](./.readme/system.drawio.png)  
+
+The system consists of:  
+  
+Frontend single-page application in Vue: https://github.com/JuliaLind/1dv613-web-server 
+Auth-server in Express: https://github.com/JuliaLind/1dv613-auth-server  
+Data-server in Express: https://github.com/JuliaLind/1dv613-data-server 
+
+SlimDreams is a mobile-first web-application that is intended to be used as an aid in a healthy weight-loss process for people over 18.  
+
+The application comes with ready to use food-item data for 6482 food items, which have been "scraped" from willys.se. The data is available under data-server/data/clean.json.  
+
+## Clone down the repo
+```git clone --recurse-submodules https://github.com/JuliaLind/slimdreams```
+
+## Start up the system locally in docker
+
+1. Clone all three repos to this directory
+2. Make sure to create neccessary .env files (example files are available in the root of each project)
+3. Create a public and private key pair and place them as follows:
+- private.pem should be placed in the root of the auth-server
+- public.pem should be placed in the root of the data-server  
+
+Additionally create another public/private key pair and place both in the route of the auth-server as test_private.pem and test_public.pem - these will be used in scenario testing.
+4. Start up the system in docker by standing in this directory and running ```bash dev.bash```.
+6. In your browser you will find the web-application on http://localhost:4173/, the auth-server on http://localhost:5053/api/v1/ (endpoint descriptions are available in the README of the auth-server repo) and data-server on http://localhost:5054/api/v1/ (endpoint descriptions are available on http://localhost:5054/api/v1/docs/).
+7. Unfortunately testing from within containers is not working, but you can run all tests locally. Keep the dockerized application running for scenario tests and e2e tests:
+- Start by runnin ```npm install``` in each repo
+- Run unit tests with ```npm run test:unit```. (Comman available in all three repos)
+- From the auth-server and data-server direcotries you can run scenario tests with ```npm run test:scen```. 
+- From the web-server directory you can run e2e tests with ```npm run test:e2e:dev``` - this will open the Cypress GUI where you can choose which browser to run the tests in.
+9. Close down the containers by running ```bash stop.bash``` from this directory.

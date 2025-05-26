@@ -1,0 +1,93 @@
+version: "3.9"
+
+services:
+  mongodb-auth:
+    image: mongo:7.0.4
+    container_name: mongodb-auth
+    ports:
+      - 27019:27017
+    volumes:
+      - mongo-auth-data:/data/db
+    networks:
+      - auth-net
+
+  mongodb-data:
+    image: mongo:7.0.4
+    container_name: mongodb-data
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+      - ./data-server/data:/data-server-data
+    networks:
+      - data-net
+
+  auth-server:
+    image: node:20
+    container_name: auth-server
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./auth-server:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./auth-server/private.pem:/usr/src/app/private.pem:ro
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    env_file:
+      - ./auth-server/.env
+    depends_on:
+      - mongodb-auth
+    ports:
+      - 5053:3000
+    networks:
+      - auth-net
+    tty: true # neccessary to show colored output in the console
+
+  data-server:
+    image: node:20
+    container_name: data-server
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./data-server:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./data-server/public.pem:/usr/src/app/public.pem:ro
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    env_file:
+      - ./data-server/.env
+    depends_on:
+      - mongodb-data
+    ports:
+      - 5054:3000
+    networks:
+      - data-net
+    tty: true # neccessary to show colored output in the console
+
+  web-server:
+    image: node:20
+    container_name: web-server
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm run dev -- --port 4173"
+    volumes:
+      - ./web-server:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      VITE_AUTH_URL: http://localhost:5053/api/v1
+      VITE_DATA_URL: http://localhost:5054/api/v1
+    ports:
+      - 4173:4173
+    networks:
+      - web-net
+    tty: true # neccessary to show colored output in the console
+
+volumes:
+  mongo-auth-data:
+  mongo-data:
+
+networks:
+  auth-net:
+  data-net:
+  web-net:

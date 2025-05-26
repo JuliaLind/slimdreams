@@ -1,0 +1,9 @@
+[submodule "data-server"]
+	path = data-server
+	url = https://github.com/JuliaLind/1dv613-data-server
+[submodule "auth-server"]
+	path = auth-server
+	url = https://github.com/JuliaLind/1dv613-auth-server
+[submodule "web-server"]
+	path = web-server
+	url = https://github.com/JuliaLind/1dv613-web-server
