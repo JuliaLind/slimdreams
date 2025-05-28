@@ -22,9 +22,16 @@ The application comes with ready to use food-item data for 6482 food items, whic
 
 1. Clone all three repos to this directory . If you have already cloned the repository before, run ```bash upd.bash``` from the root directory to pull the latest updates from the submodules/repos.   
 2. Make sure to create neccessary .env files (example files are available in the root of each project)  
-3. Create a public and private key pair and place them as follows:  
+3. Create a public and private key pair with:  
+```openssl genrsa -out private.pem 2048```
+```openssl rsa -in private.pem -pubout -out public.pem```
+
+
+and place them as follows:  
 - private.pem should be placed in the root of the auth-server  
 - public.pem should be placed in the root of the data-server  
+
+Don't mix the order, as the private key can be used to generate new public keys!  
 
 Additionally create another public/private key pair and place both in the route of the auth-server as test_private.pem and test_public.pem - these will be used in scenario testing.  
 4. Start up the system in docker by standing in this directory and running ```bash start.bash```.
