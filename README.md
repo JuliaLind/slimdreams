@@ -10,7 +10,7 @@ Data-server in Express: https://github.com/JuliaLind/1dv613-data-server
 
 SlimDreams is a mobile-first web-application that is intended to be used as an aid in a healthy weight-loss process for people over 18.  
 
-The application comes with ready to use food-item data for 6482 food items, which have been "scraped" from willys.se. The data is available under data-server/data/clean.json.  
+The application comes with ready to use food-item data for 6482 food items, which have been "scraped" from willys.se. The data is available under data-server/data/foods.json.  
 
 ## Clone down the repo
 ```git clone --recurse-submodules https://github.com/JuliaLind/slimdreams```
@@ -28,7 +28,7 @@ Additionally create another public/private key pair and place both in the route 
 5. In your browser you will find the web-application on http://localhost:4173/, the auth-server on http://localhost:5053/api/v1/ (endpoint descriptions are available in the README of the auth-server repo) and data-server on http://localhost:5054/api/v1/ (endpoint descriptions are available on http://localhost:5054/api/v1/docs/).  
 6. Unfortunately testing from within containers is not working, but you can run all tests locally. Keep the dockerized application running for scenario tests and e2e tests:  
 - Start by runnin ```npm install``` in each repo  
-- Run unit tests with ```npm run test:unit```. (Comman available in all three repos)  
+- Run unit tests with ```npm run test:unit```. (Command available in all three repos)  
 - From the auth-server and data-server direcotries you can run scenario tests with ```npm run test:scen```.  
 - From the web-server directory you can run e2e tests with ```npm run test:e2e:dev``` - this will open the Cypress GUI where you can choose which browser to run the tests in.  
 7. Close down the containers by running ```bash stop.bash``` from this directory.  

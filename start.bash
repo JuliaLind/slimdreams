@@ -6,7 +6,7 @@ echo "Seeding MongoDB data..."
 docker exec -i mongodb-data mongoimport \
   --db data \
   --collection fooditems \
-  --file /data-server-data/clean.json \
+  --file /data-server-data/foods.json \
   --jsonArray
 echo "Seed complete. Entering web-server..."
 # docker exec -it web-server sh
