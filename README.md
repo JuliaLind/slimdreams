@@ -1,6 +1,7 @@
 # SlimDreams
 
-![High-level diagram of the system](./.readme/system.drawio.png)  
+SlimDreams is a school project from the end of year 1 of Webprogrammerare program at Linneus University https://coursepress.lnu.se/kurser/mjukvaruutvecklingsprojekt/.  
+
 
 The system consists of:  
   
@@ -8,7 +9,9 @@ Frontend single-page application in Vue: https://github.com/JuliaLind/1dv613-web
 Auth-server in Express: https://github.com/JuliaLind/1dv613-auth-server  
 Data-server in Express: https://github.com/JuliaLind/1dv613-data-server  
 
-SlimDreams is a mobile-first web-application that is intended to be used as an aid in a healthy weight-loss process for people over 18.  
+![High-level diagram of the system](./.readme/system.drawio.png)  
+
+SlimDreams is a mobile-first Progressive Web Application, that is intended to be used as an aid in a healthy weight-loss process for people over 18.  
 
 The application comes with ready to use food-item data for 6482 food items, which have been "scraped" from willys.se. The data is available under data-server/data/foods.json.  
 
