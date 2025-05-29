@@ -27,9 +27,16 @@ To pull latest changes from submodules after you have cloned the project run:
 
 ## Start up the system locally in docker
 
-1. Start up the system in docker by standing in this directory and running ```bash start.bash```.
-2. In your browser you will find the web-application on http://localhost:4173/, the auth-server on http://localhost:5053/api/v1/ (endpoint descriptions are available in the README of the auth-server repo) and data-server on http://localhost:5054/api/v1/ (endpoint descriptions are available on http://localhost:5054/api/v1/docs/).  
-3. Unfortunately testing from within containers is not working, but you can run all tests locally. Keep the dockerized application running for scenario tests and e2e tests: 
+Make sure you have started your Docker desktop. Then run:  
+
+ ```bash start.bash```.  
+
+
+In your browser you will find the web-application on http://localhost:4173/, the auth-server on http://localhost:5053/api/v1/ (endpoint descriptions are available in the README of the auth-server repo) and data-server on http://localhost:5054/api/v1/ (endpoint descriptions are available on http://localhost:5054/api/v1/docs/).  
+
+## Testing 
+
+Unfortunately testing from within containers is not working, but you can run all tests locally. Keep the dockerized application running for scenario tests and e2e tests, and run: 
 
 ```bash test.bash```
 

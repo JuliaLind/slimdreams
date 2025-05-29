@@ -8,7 +8,7 @@ docker exec -i mongodb-data mongoimport \
   --collection fooditems \
   --file /data-server-data/foods.json \
   --jsonArray
-echo "Seed complete. Entering web-server..."
+echo "Seed completed"
 
 
 # To enter the containers, you can use the following commands:
