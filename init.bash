@@ -34,3 +34,5 @@ openssl rsa -pubout -in auth-server/private.pem -out data-server/public.pem
 openssl genpkey -algorithm RSA -out auth-server/test_private.pem -pkeyopt rsa_keygen_bits:2048
 
 openssl rsa -pubout -in auth-server/test_private.pem -out auth-server/test_public.pem
+
+cp auth-server/test_public.pem data-server/test_public.pem
