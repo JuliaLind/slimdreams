@@ -42,4 +42,6 @@ Unfortunately testing from within containers is not working, but you can run all
 
 Or run the test commands from the test.bash script individually from each of the repos.  
 
-7. Close down the containers by running ```bash stop.bash``` from this directory.  
+## Close down
+
+Close down the containers by running ```bash stop.bash``` from this directory.  
