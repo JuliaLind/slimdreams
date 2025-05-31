@@ -13,7 +13,11 @@ Data-server in Express: https://github.com/JuliaLind/1dv613-data-server
 
 ![High-level diagram of the system](./.readme/system.drawio.png)  
 
-The application comes with ready to use food-item data for 6482 food items, which have been "scraped" from willys.se. The data is available under data-server/data/foods.json.  
+
+
+
+The application includes a dataset of 6 482 food items, sourced from willys.se, available at data-server/data/foods.json. Please note: if you intend to use this application at scale, you should either replace the image urls with your own hosted images or contact www.axfood.se to obtain explicit permission.  
+
 
 ## Clone down the repo
 ```git clone --recurse-submodules https://github.com/JuliaLind/slimdreams```.   
