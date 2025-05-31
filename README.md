@@ -3,6 +3,8 @@
 SlimDreams is a school project from the end of year 1 of Webprogrammerare program at Linneus University https://coursepress.lnu.se/kurser/mjukvaruutvecklingsprojekt/.  
   
 
+  This project has a Wiki at https://github.com/JuliaLind/slimdreams/wiki .  
+
 SlimDreams is a mobile-first Progressive Web Application, that is intended to be used as an aid in a healthy weight-loss process for people over 18. It is deployed at is deployed at https://julia-lnu.duckdns.org/slimdreams/ .  
 
 The system consists of:  
@@ -13,7 +15,7 @@ Data-server in Express: https://github.com/JuliaLind/1dv613-data-server
 
 ![High-level diagram of the system](./.readme/system.drawio.png)  
 
-
+Class-diagrams and sequence diagrams for the individual parts are available in the submodule's repos.  
 
 
 The application includes a dataset of 6 482 food items, sourced from willys.se, available at data-server/data/foods.json. Please note: if you intend to use this application at scale, you should either replace the image urls with your own hosted images or contact www.axfood.se to obtain explicit permission.  
