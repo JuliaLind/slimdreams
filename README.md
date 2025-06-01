@@ -5,11 +5,9 @@ SlimDreams is a school project from the end of year 1 of Webprogrammerare progra
 [![▶️ Watch the demo on YouTube](https://img.youtube.com/vi/LvBprixUYKY/hqdefault.jpg)](https://youtu.be/LvBprixUYKY)
 
 
-  
+  SlimDreams is a mobile-first Progressive Web Application, that is intended to be used as an aid in a healthy weight-loss process for people over 18. It is deployed at https://julia-lnu.duckdns.org/slimdreams/ .  
 
   This project has a Wiki at https://github.com/JuliaLind/slimdreams/wiki .  
-
-SlimDreams is a mobile-first Progressive Web Application, that is intended to be used as an aid in a healthy weight-loss process for people over 18. It is deployed at is deployed at https://julia-lnu.duckdns.org/slimdreams/ .  
 
 The system consists of:  
   
