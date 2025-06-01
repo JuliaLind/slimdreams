@@ -2,7 +2,8 @@
 
 SlimDreams is a school project from the end of year 1 of Webprogrammerare program at Linneus University https://coursepress.lnu.se/kurser/mjukvaruutvecklingsprojekt/.  
   
-[▶️ Watch the 3.5 min demo](./demo.mp4)
+[![▶️ Watch the demo on YouTube](https://img.youtube.com/vi/LvBprixUYKY/hqdefault.jpg)](https://youtu.be/LvBprixUYKY)
+
 
   
 
