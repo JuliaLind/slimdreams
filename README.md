@@ -53,3 +53,11 @@ Or run the test commands from the test.bash script individually from each of the
 ## Close down
 
 Close down the containers by running ```bash stop.bash``` from this directory.  
+
+## Known issues  
+
+1. Trailing slash must be present when navigating to endpoint https://julia-lnu.duckdns.org/data/api/v1/swagger/ , otherwise user gets redirected to https://julia-lnu.duckdns.org/api/v1/swagger/ which does not work.  
+
+2. Do not have darkmode on in browser when using the application - some of the external components are adjusting the colors while rest of the application is not - results in insufficient contrast between text and background, and "weird" styling  
+
+3. In the web-browser part of the system, some of the object attributes are accessed directly (without getters), as a temporary workaround Vue's reactivity issues  
